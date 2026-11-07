@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  TrialMatch palette
+  paper   #FBFCFD  page background
+  ink     #13294B  navy: text, primary actions
+  teal    #0F766E  "appears met", confirmations
+  link    #2F5FA7  registry blue: links to ClinicalTrials.gov
+  amber   #8A5300  "to confirm" (unknown)
+  brick   #B42318  "possible blocker"
+  violet  #5B3E96  "requires clinical review"
+  rule    #D5DCE5  hairlines
+  Status is always conveyed with color + icon + words, never color alone.
+*/
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-public-sans);
+  --font-heading: var(--font-source-serif);
+  --font-serif: var(--font-source-serif);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-ink: #13294b;
+  --color-ink-soft: #3d5170;
+  --color-teal: #0f766e;
+  --color-teal-wash: #e6f3f1;
+  --color-link: #2f5fa7;
+  --color-amber: #8a5300;
+  --color-amber-wash: #fbf1e1;
+  --color-brick: #b42318;
+  --color-brick-wash: #fbeceb;
+  --color-violet: #5b3e96;
+  --color-violet-wash: #f0ecf8;
+  --color-rule: #d5dce5;
+  --color-paper: #fbfcfd;
+  --color-mist: #f1f4f8;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #fbfcfd;
+  --foreground: #13294b;
+  --card: #ffffff;
+  --card-foreground: #13294b;
+  --popover: #ffffff;
+  --popover-foreground: #13294b;
+  --primary: #13294b;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f4f8;
+  --secondary-foreground: #13294b;
+  --muted: #f1f4f8;
+  --muted-foreground: #4a5b74;
+  --accent: #e6f3f1;
+  --accent-foreground: #0f4f4a;
+  --destructive: #b42318;
+  --border: #d5dce5;
+  --input: #c3ccd8;
+  --ring: #2f5fa7;
+  --radius: 0.375rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "tnum" 0;
+  }
+  html {
+    @apply font-sans;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  a {
+    text-underline-offset: 3px;
+  }
+  :focus-visible {
+    outline: 2px solid #2f5fa7;
+    outline-offset: 2px;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

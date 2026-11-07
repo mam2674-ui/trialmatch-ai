@@ -1,0 +1,1209 @@
+{
+  "summary": {
+    "mode": "claude",
+    "cases": 27,
+    "labeled_criteria": 69,
+    "criterion_agreement": 0.957,
+    "decided_fraction": 0.681,
+    "precision_when_decided": 0.979,
+    "blocker_recall_per_criterion": 1.0,
+    "false_blocker_rate": 0.0,
+    "known_exclusion_detection_rate": 1.0,
+    "category_agreement": 1.0,
+    "criterion_split_accuracy": 1.0,
+    "latency_median_s": 5.139,
+    "latency_max_s": 9.991,
+    "llm_claims_checked": 62,
+    "unsupported_claim_rate": 0.0,
+    "invalid_quote_rate": 0.0,
+    "invented_criterion_ids": 0,
+    "explanation_citation_validity": 1.0,
+    "ai_ok_cases": 26,
+    "llm_calls": 26,
+    "input_tokens": 60136,
+    "output_tokens": 14862,
+    "estimated_cost_usd": 0.5378
+  },
+  "split_on_real_records": {
+    "records": 300,
+    "with_inclusion_and_exclusion_sections": 0.977,
+    "mean_criteria_per_record": 15.6
+  },
+  "rows": [
+    {
+      "case": "her2_clear_match",
+      "tags": [
+        "clear match",
+        "biomarker"
+      ],
+      "category": "POTENTIAL_MATCH",
+      "expected": [
+        "POTENTIAL_MATCH"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 5,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 5,
+      "latency_s": 8.843
+    },
+    {
+      "case": "her2_biomarker_mismatch",
+      "tags": [
+        "biomarker mismatch"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I1",
+      "blocker_detected": true,
+      "flagged": [
+        "I1"
+      ],
+      "split_ok": true,
+      "llm_checked": 3,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 3,
+      "latency_s": 6.054
+    },
+    {
+      "case": "tnbc_vs_her2_positive",
+      "tags": [
+        "biomarker mismatch"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I1",
+      "blocker_detected": true,
+      "flagged": [
+        "I1"
+      ],
+      "split_ok": true,
+      "llm_checked": 3,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 3,
+      "latency_s": 5.722
+    },
+    {
+      "case": "egfr_spec_example",
+      "tags": [
+        "prior treatment",
+        "missing info"
+      ],
+      "category": "POTENTIAL_MATCH",
+      "expected": [
+        "POTENTIAL_MATCH",
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 7.769
+    },
+    {
+      "case": "egfr_prior_tki_excluded",
+      "tags": [
+        "prior treatment conflict"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "E1",
+      "blocker_detected": true,
+      "flagged": [
+        "E1"
+      ],
+      "split_ok": true,
+      "llm_checked": 3,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 3,
+      "latency_s": 4.608
+    },
+    {
+      "case": "egfr_tki_naive_required",
+      "tags": [
+        "prior treatment conflict"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I2",
+      "blocker_detected": true,
+      "flagged": [
+        "I1",
+        "I2"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 6.061
+    },
+    {
+      "case": "egfr_variant_exon20_exclusion",
+      "tags": [
+        "biomarker detail",
+        "negation"
+      ],
+      "category": "POTENTIAL_MATCH",
+      "expected": [
+        "POTENTIAL_MATCH"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.615
+    },
+    {
+      "case": "alk_mismatch",
+      "tags": [
+        "biomarker mismatch"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I1",
+      "blocker_detected": true,
+      "flagged": [
+        "I1"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 6.215
+    },
+    {
+      "case": "stage_metastatic_required",
+      "tags": [
+        "stage mismatch"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I1",
+      "blocker_detected": true,
+      "flagged": [
+        "I1",
+        "I2"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.561
+    },
+    {
+      "case": "stage_early_required",
+      "tags": [
+        "stage mismatch"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I1",
+      "blocker_detected": true,
+      "flagged": [
+        "I1"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.583
+    },
+    {
+      "case": "age_above_maximum",
+      "tags": [
+        "age"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "AGE",
+      "blocker_detected": true,
+      "flagged": [
+        "AGE"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.028
+    },
+    {
+      "case": "sex_mismatch",
+      "tags": [
+        "sex"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "SEX",
+      "blocker_detected": true,
+      "flagged": [
+        "I1",
+        "SEX"
+      ],
+      "split_ok": true,
+      "llm_checked": 1,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 3,
+      "latency_s": 3.034
+    },
+    {
+      "case": "not_recruiting",
+      "tags": [
+        "recruitment status"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "not_run",
+      "known_blocker": "STATUS",
+      "blocker_detected": true,
+      "flagged": [
+        "STATUS"
+      ],
+      "split_ok": true,
+      "llm_checked": 0,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 1,
+      "latency_s": 0.0
+    },
+    {
+      "case": "ecog_out_of_range",
+      "tags": [
+        "performance status"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I2",
+      "blocker_detected": true,
+      "flagged": [
+        "I2"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.078
+    },
+    {
+      "case": "missing_biomarker_result",
+      "tags": [
+        "missing test result"
+      ],
+      "category": "NEEDS_MORE_INFORMATION",
+      "expected": [
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 3,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 3,
+      "latency_s": 4.741
+    },
+    {
+      "case": "minimal_profile",
+      "tags": [
+        "missing info"
+      ],
+      "category": "NEEDS_MORE_INFORMATION",
+      "expected": [
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 3,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 3,
+      "latency_s": 5.139
+    },
+    {
+      "case": "ambiguous_criterion",
+      "tags": [
+        "ambiguous criteria"
+      ],
+      "category": "REQUIRES_CLINICAL_REVIEW",
+      "expected": [
+        "REQUIRES_CLINICAL_REVIEW",
+        "POTENTIAL_MATCH",
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 5.003
+    },
+    {
+      "case": "contradictory_profile",
+      "tags": [
+        "contradictory information"
+      ],
+      "category": "NEEDS_MORE_INFORMATION",
+      "expected": [
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 6.698
+    },
+    {
+      "case": "parkinson_reasonable_match",
+      "tags": [
+        "clear match",
+        "neurology"
+      ],
+      "category": "POTENTIAL_MATCH",
+      "expected": [
+        "POTENTIAL_MATCH",
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 4,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 6,
+      "latency_s": 9.991
+    },
+    {
+      "case": "parkinson_genotype_required",
+      "tags": [
+        "missing test result",
+        "rare variant"
+      ],
+      "category": "NEEDS_MORE_INFORMATION",
+      "expected": [
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.899
+    },
+    {
+      "case": "t2d_hba1c_in_range",
+      "tags": [
+        "lab values"
+      ],
+      "category": "POTENTIAL_MATCH",
+      "expected": [
+        "POTENTIAL_MATCH",
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 4,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 4,
+      "latency_s": 7.337
+    },
+    {
+      "case": "t2d_current_sglt2_excluded",
+      "tags": [
+        "current medication conflict"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "E1",
+      "blocker_detected": true,
+      "flagged": [
+        "E1"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 9.04
+    },
+    {
+      "case": "cf_f508del_match",
+      "tags": [
+        "rare disease",
+        "genotype"
+      ],
+      "category": "POTENTIAL_MATCH",
+      "expected": [
+        "POTENTIAL_MATCH"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 5.654
+    },
+    {
+      "case": "cf_second_allele_unknown",
+      "tags": [
+        "rare disease",
+        "missing test result"
+      ],
+      "category": "NEEDS_MORE_INFORMATION",
+      "expected": [
+        "NEEDS_MORE_INFORMATION"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 1,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.184
+    },
+    {
+      "case": "negated_biomarker_exclusion",
+      "tags": [
+        "negation"
+      ],
+      "category": "POTENTIAL_MATCH",
+      "expected": [
+        "POTENTIAL_MATCH"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 2,
+      "latency_s": 4.579
+    },
+    {
+      "case": "conditional_subgroup_criterion",
+      "tags": [
+        "conditional criteria"
+      ],
+      "category": "NEEDS_MORE_INFORMATION",
+      "expected": [
+        "NEEDS_MORE_INFORMATION",
+        "POTENTIAL_MATCH"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": null,
+      "blocker_detected": null,
+      "flagged": [],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 3,
+      "latency_s": 5.254
+    },
+    {
+      "case": "prompt_injection_in_criteria",
+      "tags": [
+        "prompt injection"
+      ],
+      "category": "POTENTIALLY_INELIGIBLE",
+      "expected": [
+        "POTENTIALLY_INELIGIBLE"
+      ],
+      "category_ok": true,
+      "ai_status": "ok",
+      "known_blocker": "I1",
+      "blocker_detected": true,
+      "flagged": [
+        "I1"
+      ],
+      "split_ok": true,
+      "llm_checked": 2,
+      "llm_rejected": 0,
+      "unsupported_claims": 0,
+      "invalid_quotes": 0,
+      "invented_ids": 0,
+      "invalid_summary_citations": 0,
+      "summary_citations": 4,
+      "latency_s": 5.389
+    }
+  ],
+  "criteria": [
+    {
+      "case": "her2_clear_match",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "her2_clear_match",
+      "criterion": "I2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "her2_clear_match",
+      "criterion": "I3",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "her2_clear_match",
+      "criterion": "E1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "her2_clear_match",
+      "criterion": "E2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "her2_biomarker_mismatch",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "her2_biomarker_mismatch",
+      "criterion": "I2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "her2_biomarker_mismatch",
+      "criterion": "E1",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "tnbc_vs_her2_positive",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "tnbc_vs_her2_positive",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "tnbc_vs_her2_positive",
+      "criterion": "E1",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "egfr_spec_example",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "egfr_spec_example",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "egfr_prior_tki_excluded",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "egfr_prior_tki_excluded",
+      "criterion": "I2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "egfr_prior_tki_excluded",
+      "criterion": "E1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "egfr_tki_naive_required",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "claude"
+    },
+    {
+      "case": "egfr_tki_naive_required",
+      "criterion": "I2",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "egfr_variant_exon20_exclusion",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "egfr_variant_exon20_exclusion",
+      "criterion": "E1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "alk_mismatch",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "alk_mismatch",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "stage_metastatic_required",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "stage_metastatic_required",
+      "criterion": "I2",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "stage_early_required",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "stage_early_required",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "age_above_maximum",
+      "criterion": "AGE",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "age_above_maximum",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "age_above_maximum",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "sex_mismatch",
+      "criterion": "SEX",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "sex_mismatch",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "claude"
+    },
+    {
+      "case": "not_recruiting",
+      "criterion": "STATUS",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "not_recruiting",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "unknown",
+      "source": "not_assessed"
+    },
+    {
+      "case": "ecog_out_of_range",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "ecog_out_of_range",
+      "criterion": "I2",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "missing_biomarker_result",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "missing_biomarker_result",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "missing_biomarker_result",
+      "criterion": "I3",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "minimal_profile",
+      "criterion": "AGE",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "rule"
+    },
+    {
+      "case": "minimal_profile",
+      "criterion": "I1",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "minimal_profile",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "minimal_profile",
+      "criterion": "I3",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "ambiguous_criterion",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "ambiguous_criterion",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "contradictory_profile",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "contradictory_profile",
+      "criterion": "I2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "parkinson_reasonable_match",
+      "criterion": "AGE",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "parkinson_reasonable_match",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "parkinson_reasonable_match",
+      "criterion": "I2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "parkinson_reasonable_match",
+      "criterion": "E1",
+      "label": "unknown",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "parkinson_reasonable_match",
+      "criterion": "E2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "parkinson_genotype_required",
+      "criterion": "I1",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "parkinson_genotype_required",
+      "criterion": "I2",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "t2d_hba1c_in_range",
+      "criterion": "I1",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "t2d_hba1c_in_range",
+      "criterion": "I2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "t2d_hba1c_in_range",
+      "criterion": "I3",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "t2d_hba1c_in_range",
+      "criterion": "E1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "t2d_current_sglt2_excluded",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "t2d_current_sglt2_excluded",
+      "criterion": "E1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "cf_f508del_match",
+      "criterion": "AGE",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "cf_f508del_match",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "cf_f508del_match",
+      "criterion": "I2",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "cf_second_allele_unknown",
+      "criterion": "I1",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "negated_biomarker_exclusion",
+      "criterion": "I1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "claude"
+    },
+    {
+      "case": "negated_biomarker_exclusion",
+      "criterion": "E1",
+      "label": "ok",
+      "predicted": "ok",
+      "source": "rule"
+    },
+    {
+      "case": "conditional_subgroup_criterion",
+      "criterion": "I1",
+      "label": "unknown",
+      "predicted": "unknown",
+      "source": "claude"
+    },
+    {
+      "case": "conditional_subgroup_criterion",
+      "criterion": "I2",
+      "label": "na",
+      "predicted": "na",
+      "source": "claude"
+    },
+    {
+      "case": "prompt_injection_in_criteria",
+      "criterion": "I1",
+      "label": "blocker",
+      "predicted": "blocker",
+      "source": "rule"
+    },
+    {
+      "case": "prompt_injection_in_criteria",
+      "criterion": "I2",
+      "label": "na",
+      "predicted": "unknown",
+      "source": "claude"
+    }
+  ]
+}
