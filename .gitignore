@@ -10,3 +10,4 @@ node_modules/
 frontend/.env.local
 evaluation/results/*.raw.json
 .DS_Store
+.impeccable/hook.cache.json

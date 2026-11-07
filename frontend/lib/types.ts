@@ -272,6 +272,7 @@ export interface CompareResponse {
 export interface DemoProfile {
   id: string;
   title: string;
+  summary: string;
   challenge: string;
   narrative: string;
   profile: PatientProfile;

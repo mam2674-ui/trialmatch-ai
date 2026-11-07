@@ -11,17 +11,17 @@ const LINKS = [
   { href: "/results", label: "Results" },
   { href: "/compare", label: "Compare" },
   { href: "/saved", label: "Saved" },
-  { href: "/about", label: "Methodology" },
+  { href: "/about", label: "How it works" },
 ];
 
 export function SiteNav() {
   return (
     <header className="border-b border-rule bg-white">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-1.5 sm:gap-x-6 sm:px-6 sm:py-2">
         <Link href="/" className="flex items-baseline gap-2 text-ink" aria-label="TrialMatch AI home">
           <Mark />
           <span className="font-serif text-lg font-semibold tracking-tight">TrialMatch</span>
-          <span className="text-sm text-ink-soft">AI</span>
+          <span className="hidden text-sm text-ink-soft sm:inline">AI</span>
         </Link>
         <Suspense fallback={<NavLinks path={null} />}>
           <ActiveNavLinks />
@@ -36,10 +36,15 @@ function ActiveNavLinks() {
 }
 
 function NavLinks({ path }: { path: string | null }) {
-  const { compare, saved, hydrated } = useAppState();
+  const { compare, saved, match, hydrated } = useAppState();
+  // Results, Compare and Saved only appear once they have something in them, so a first visit isn't a set of
+  // dead ends (and the nav fits on one row on a phone).
+  const hasContent: Record<string, boolean> = {
+    "/results": hydrated && !!match, "/compare": hydrated && compare.length > 0, "/saved": hydrated && saved.length > 0,
+  };
   return (
-        <nav aria-label="Primary" className="-mx-2 flex flex-wrap gap-1 text-sm">
-          {LINKS.map((l) => {
+        <nav aria-label="Primary" className="-mx-2 flex flex-wrap gap-1 text-[0.95rem]">
+          {LINKS.filter((l) => hasContent[l.href] !== false || path === l.href).map((l) => {
             const active = !!path && (path === l.href || path.startsWith(l.href + "/"));
             const count = l.href === "/compare" ? compare.length : l.href === "/saved" ? saved.length : 0;
             return (
@@ -48,7 +53,7 @@ function NavLinks({ path }: { path: string | null }) {
                 href={l.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded px-2 py-1.5 text-ink-soft hover:bg-mist hover:text-ink",
+                  "inline-flex min-h-11 items-center rounded px-2.5 text-ink-soft hover:bg-mist hover:text-ink",
                   active && "bg-mist font-medium text-ink",
                 )}
               >

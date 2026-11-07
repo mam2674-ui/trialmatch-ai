@@ -18,6 +18,7 @@ DEMOS = [
     {
         "id": "breast-her2",
         "title": "Early HER2-positive breast cancer",
+        "summary": "42, Boston. Stage II HER2-positive breast cancer; finished surgery and chemotherapy.",
         "challenge": "Molecular markers + completed adjuvant therapy; must not confuse 'not started immunotherapy' with prior immunotherapy.",
         "narrative": ("I'm a 42-year-old woman living in Boston, MA. I was diagnosed with stage II HER2-positive, "
                       "ER-negative breast cancer. I've completed surgery and chemotherapy but haven't started "
@@ -37,6 +38,7 @@ DEMOS = [
     {
         "id": "nsclc-egfr",
         "title": "Metastatic EGFR-mutant lung cancer after osimertinib",
+        "summary": "58, Chicago. Lung cancer that has spread, with an EGFR mutation; has taken osimertinib.",
         "challenge": "Prior targeted therapy: osimertinib exposure is known, but progression is not stated and must not be inferred.",
         "narrative": ("58-year-old male in Chicago, IL with metastatic non-small cell lung cancer (adenocarcinoma), "
                       "EGFR exon 19 deletion, previously treated with osimertinib. ECOG 1. Willing to travel up to 300 miles."),
@@ -57,6 +59,7 @@ DEMOS = [
     {
         "id": "parkinsons",
         "title": "Early Parkinson's disease",
+        "summary": "67, Seattle. Parkinson's disease for about two years; takes carbidopa/levodopa.",
         "challenge": "Neurology trials often hinge on disease duration, Hoehn & Yahr stage and medication status that the patient may not know.",
         "narrative": ("I'm a 67-year-old man in Seattle, WA. I was diagnosed with Parkinson's disease about two years ago. "
                       "I take carbidopa/levodopa. I'd consider trials within 150 miles."),
@@ -72,6 +75,7 @@ DEMOS = [
     {
         "id": "t2d-cvd",
         "title": "Type 2 diabetes with cardiovascular disease",
+        "summary": "61, Houston. Type 2 diabetes and heart disease; last HbA1c was 8.4%.",
         "challenge": "Lab-value thresholds (HbA1c) and comorbidity-based inclusion; units must be validated.",
         "narrative": ("61-year-old woman in Houston, TX with type 2 diabetes for 12 years and coronary artery disease "
                       "(stent placed in 2022). Taking metformin and empagliflozin. My last HbA1c was 8.4%. "
@@ -92,6 +96,7 @@ DEMOS = [
     {
         "id": "cystic-fibrosis",
         "title": "Cystic fibrosis (rare inherited disorder)",
+        "summary": "24, Denver. Cystic fibrosis with one known F508del variant; the second is unknown.",
         "challenge": "Genotype-specific trials (e.g. F508del) and pediatric/adult age bands; genotype detail is often missing.",
         "narrative": ("My 24-year-old son has cystic fibrosis. He has one F508del CFTR mutation; we're not sure about "
                       "the second variant. We live in Denver, CO and can travel within 500 miles."),

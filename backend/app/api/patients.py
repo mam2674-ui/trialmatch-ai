@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.api.deps import llm_dep
 from app.core.ratelimit import rate_limit
@@ -39,7 +39,8 @@ async def answer_question(req: AnswerRequest) -> PatientProfile:
 class DemoProfile(BaseModel):
     id: str
     title: str
-    challenge: str
+    summary: str = Field(description="One plain-language line describing the fictional patient")
+    challenge: str = Field(description="What this demo tests in the matcher (for reviewers)")
     narrative: str
     profile: PatientProfile
 

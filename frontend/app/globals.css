@@ -103,6 +103,16 @@
   a {
     text-underline-offset: 3px;
   }
+  p, li, dd, figcaption, label {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: #cfe8e4;
+    color: #13294b;
+  }
+  textarea, input {
+    caret-color: #0f766e;
+  }
   :focus-visible {
     outline: 2px solid #2f5fa7;
     outline-offset: 2px;
