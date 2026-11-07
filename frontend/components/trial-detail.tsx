@@ -95,7 +95,7 @@ export function TrialDetail({ nctId }: { nctId: string }) {
             <h2 id="assess-h" className="text-xl text-ink">Preliminary eligibility</h2>
             <CategoryBadge category={r.eligibility.category} />
           </div>
-          <p className="mt-1 text-sm text-ink-soft">{CATEGORY_STYLE[r.eligibility.category].blurb} {r.eligibility.headline}.</p>
+          <p className="mt-1 text-sm text-ink-soft">{r.eligibility.headline}. {CATEGORY_STYLE[r.eligibility.category].blurb.replace(/^No blockers identified\. /, "")}</p>
           <p className="mt-4 max-w-prose leading-relaxed text-ink"><CitedText text={r.eligibility.explanation} criteria={r.criteria} /></p>
           <p className="tabular mt-3 text-xs text-ink-soft">
             {r.completeness.assessed} of {r.completeness.total_criteria} criteria assessed · {r.completeness.unknown} unknown ·{" "}

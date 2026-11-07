@@ -88,7 +88,7 @@ export function ExplainPanel({ nctId, sessionId, profile, criteria }: {
               <h3 className="text-base text-ink">Terms in this study</h3>
               <dl className="mt-2 grid gap-3 text-sm">
                 {Object.entries(data.glossary).map(([term, def]) => (
-                  <div key={term}><dt className="font-medium capitalize text-ink">{term}</dt><dd className="text-ink-soft">{def}</dd></div>
+                  <div key={term}><dt className="font-medium text-ink">{termLabel(term)}</dt><dd className="text-ink-soft">{def}</dd></div>
                 ))}
               </dl>
             </aside>
@@ -97,4 +97,10 @@ export function ExplainPanel({ nctId, sessionId, profile, criteria }: {
       )}
     </section>
   );
+}
+
+const ACRONYMS: Record<string, string> = { ecog: "ECOG", egfr: "EGFR", her2: "HER2", hba1c: "HbA1c" };
+
+function termLabel(term: string) {
+  return ACRONYMS[term] ?? term.charAt(0).toUpperCase() + term.slice(1);
 }
