@@ -7,7 +7,7 @@ searches **live ClinicalTrials.gov records**, ranks them with hybrid biomedical 
 screens each study's inclusion and exclusion criteria with deterministic rules plus Claude. A validator checks every
 claim before anyone sees it.
 
-**Live preview:** https://trialmatch-ai-alpha.vercel.app (website only: search is disabled until the API is
+**Live preview:** https://trialmatchai.vercel.app (website only: search is disabled until the API is
 hosted; see [Deployment](#deployment)).
 
 > **Not medical advice.** TrialMatch never determines eligibility. Each result is a preliminary screen, and final
@@ -378,6 +378,8 @@ with Yes / No / Not sure are shown.
 - **Database:** any managed PostgreSQL with the `vector` extension (Neon, Supabase, Render, or RDS with pgvector). The
   first migration runs `CREATE EXTENSION IF NOT EXISTS vector`.
 - **Frontend on Vercel:** root directory `frontend`, environment variable `NEXT_PUBLIC_API_URL` set to the API URL.
+  Without that variable the site builds in website-only preview mode (search disabled, with a notice). The live
+  preview deploys automatically from `main`.
 - **CI:** `.github/workflows/ci.yml` runs migrations plus `alembic check`, the backend test suite against a pgvector
   service container, the rules-only evaluation, and the frontend typecheck, lint, and build.
 - The in-process rate limiter and session purge assume a single API instance. Move both to Redis before scaling out.
