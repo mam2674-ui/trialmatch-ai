@@ -3,7 +3,14 @@ import type {
   MethodologyStats, ParseResponse, PatientProfile, Trial,
 } from "./types";
 
-export const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8010";
+// In development the API defaults to the local backend. A production build with no NEXT_PUBLIC_API_URL is a
+// website-only preview: requests fail fast with an explanation instead of calling the visitor's own localhost.
+export const API_BASE: string | null =
+  process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === "development" ? "http://localhost:8010" : null);
+export const API_CONNECTED = API_BASE !== null;
+export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL || null;
+export const PREVIEW_MESSAGE =
+  "Search isn't connected in this preview: the matching service isn't hosted yet.";
 
 export class ApiError extends Error {
   constructor(public status: number, message: string, public code?: string) {
@@ -12,6 +19,7 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  if (!API_BASE) throw new ApiError(0, PREVIEW_MESSAGE, "not_connected");
   let res: Response;
   try {
     res = await fetch(`${API_BASE}${path}`, {

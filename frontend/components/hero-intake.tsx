@@ -6,7 +6,7 @@ import { Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useAppState } from "@/components/app-state";
-import { api } from "@/lib/api";
+import { api, API_CONNECTED } from "@/lib/api";
 import type { DemoProfile } from "@/lib/types";
 
 const MIN_CHARS = 10;
@@ -19,6 +19,7 @@ export function HeroIntake() {
   const tooShort = narrative.trim().length < MIN_CHARS;
 
   useEffect(() => {
+    if (!API_CONNECTED) return;
     api.demos().then(setDemos).catch(() => setDemosFailed(true));
   }, []);
 
@@ -60,10 +61,12 @@ export function HeroIntake() {
         Leave out names, birthdates, addresses and record numbers. Your description isn&apos;t stored.
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-        <Button onClick={start} disabled={tooShort} className="h-11 px-5 text-base">
+        <Button onClick={start} disabled={tooShort || !API_CONNECTED} className="h-11 px-5 text-base">
           Find clinical trials
         </Button>
-        {tooShort && (
+        {!API_CONNECTED ? (
+          <span className="text-sm text-ink-soft">Search isn&apos;t connected in this preview.</span>
+        ) : tooShort && (
           <span className="text-sm text-ink-soft" aria-live="polite">
             {narrative.trim().length === 0 ? "Start with the diagnosis." : "Add a little more detail to continue."}
           </span>
@@ -72,7 +75,11 @@ export function HeroIntake() {
 
       <div className="mt-6 border-t border-rule pt-4">
         <p className="text-sm font-medium text-ink">Or start from a fictional example</p>
-        {demosFailed ? (
+        {!API_CONNECTED ? (
+          <p className="mt-2 text-sm text-ink-soft">
+            Examples run a live search, so they need the matching service too.
+          </p>
+        ) : demosFailed ? (
           <p className="mt-2 text-sm text-ink-soft">Examples couldn&apos;t load right now. You can still describe a diagnosis above.</p>
         ) : !demos ? (
           <p className="mt-2 text-sm text-ink-soft">Loading examples…</p>

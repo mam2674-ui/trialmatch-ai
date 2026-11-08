@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { api } from "@/lib/api";
+import { api, API_CONNECTED } from "@/lib/api";
 import type { Health, MethodologyStats } from "@/lib/types";
 import { formatDateTime } from "@/lib/utils";
 
@@ -11,11 +11,20 @@ export function SystemStats() {
   const [down, setDown] = useState(false);
 
   useEffect(() => {
+    if (!API_CONNECTED) return;
     Promise.all([api.stats(), api.health()])
       .then(([s, h]) => { setStats(s); setHealth(h); })
       .catch(() => setDown(true));
   }, []);
 
+  if (!API_CONNECTED) {
+    return (
+      <p className="rounded bg-mist p-4 text-sm text-ink-soft">
+        Live system status appears here when the matching service is connected. This deployment is a website-only
+        preview.
+      </p>
+    );
+  }
   if (down) return <p className="rounded bg-brick-wash p-4 text-sm text-brick">The TrialMatch API is not reachable right now.</p>;
   if (!stats || !health) return <p className="text-sm text-ink-soft">Loading system status…</p>;
 

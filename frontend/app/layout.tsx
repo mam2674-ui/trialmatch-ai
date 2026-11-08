@@ -3,6 +3,7 @@ import { Public_Sans, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { AppStateProvider } from "@/components/app-state";
+import { PreviewNotice } from "@/components/preview-notice";
 import { SiteNav } from "@/components/site-nav";
 
 const publicSans = Public_Sans({ variable: "--font-public-sans", subsets: ["latin"] });
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <AppStateProvider>
           <SiteNav />
+          <PreviewNotice />
           <main id="main" className="flex-1">{children}</main>
           <footer className="border-t border-rule bg-white">
             <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 text-sm text-ink-soft sm:px-6 md:grid-cols-[2fr_1fr]">
