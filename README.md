@@ -7,6 +7,9 @@ searches **live ClinicalTrials.gov records**, ranks them with hybrid biomedical 
 screens each study's inclusion and exclusion criteria with deterministic rules plus Claude. A validator checks every
 claim before anyone sees it.
 
+**Live preview:** https://trialmatch-ai-alpha.vercel.app (website only: search is disabled until the API is
+hosted; see [Deployment](#deployment)).
+
 > **Not medical advice.** TrialMatch never determines eligibility. Each result is a preliminary screen, and final
 > eligibility is established only by the study's research team.
 

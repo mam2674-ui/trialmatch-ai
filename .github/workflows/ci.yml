@@ -36,7 +36,7 @@ jobs:
           pip install -r requirements-dev.txt
       - name: Migrate
         run: alembic upgrade head && alembic check
-      - name: Tests (network-free: ClinicalTrials.gov and Claude are mocked)
+      - name: "Tests (network-free: ClinicalTrials.gov and Claude are mocked)"
         run: pytest -q
       - name: Rules-only evaluation
         run: python ../evaluation/run_eval.py --llm none
